@@ -1,0 +1,6 @@
+E:\C#\New_04_11\New_04_11\bin\Debug\New_04_11.exe.config
+E:\C#\New_04_11\New_04_11\bin\Debug\New_04_11.exe
+E:\C#\New_04_11\New_04_11\bin\Debug\New_04_11.pdb
+E:\C#\New_04_11\New_04_11\obj\Debug\New_04_11.csprojResolveAssemblyReference.cache
+E:\C#\New_04_11\New_04_11\obj\Debug\New_04_11.exe
+E:\C#\New_04_11\New_04_11\obj\Debug\New_04_11.pdb
