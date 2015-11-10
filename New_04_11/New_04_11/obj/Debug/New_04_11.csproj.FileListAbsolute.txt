@@ -7,3 +7,6 @@ E:\C#\New_04_11\New_04_11\obj\Debug\New_04_11.pdb
 E:\Alarm\New_04_11\New_04_11\bin\Debug\New_04_11.exe.config
 E:\Alarm\New_04_11\New_04_11\obj\Debug\New_04_11.exe
 E:\Alarm\New_04_11\New_04_11\obj\Debug\New_04_11.pdb
+E:\Alarm\New_04_11\New_04_11\bin\Debug\New_04_11.exe
+E:\Alarm\New_04_11\New_04_11\bin\Debug\New_04_11.pdb
+E:\Alarm\New_04_11\New_04_11\obj\Debug\New_04_11.csprojResolveAssemblyReference.cache

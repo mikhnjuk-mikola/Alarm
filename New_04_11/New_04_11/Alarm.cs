@@ -1,42 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
 
-namespace ConsoleApplication1
+namespace New_04_11
 {
-    class Alarm
+    public class Alarm
     {
-        public Alarm(string name)
+        public Alarm(string name, DateTime dateTime)
         {
-            name = Name;
-        }
-        public string Name { get; private set; }
-        public static void Vvod()
-        {
-            while (true)
-            {
-                Console.WriteLine("Введите время дзвонка");
-                Console.WriteLine("Формат ввода:ДД.ДД.ДД ВВ:ВВ:ВВ");
-                DateTime alarmTime;
-                if (DateTime.TryParse(Console.ReadLine(), out alarmTime))
-                {
-                    if (alarmTime < DateTime.Now)
-                    {
-                        Console.WriteLine("Не верний формат ввода будильника.Будильник не может бить в прошедшем времени");
-                        break;
-                    }
-                    Task.Factory.StartNew(() => Follow(alarmTime));
-                    Console.WriteLine("Будильник был успешно установлен на: " + alarmTime);
-                    break;
-                }
-            }
-        }
-        public static void Follow(DateTime alarmTime)
-        {
+            Name = name;
+            DateTime = dateTime;
 
+            IsActive = true;
+        }
+
+        public string Name { get; private set; }
+        public DateTime DateTime { get; private set; }
+
+        public bool IsActive { get; private set; }
+
+
+        private void Follow(DateTime alarmTime)
+        {
             var alarmTimeLocal = alarmTime;
             while (true)
             {
@@ -46,13 +30,14 @@ namespace ConsoleApplication1
                     Console.WriteLine("ДЗВОНОК!!!!!");
                     break;
                 }
-
             }
+
+            IsActive = false;
+        }
+
+        public void Run()
+        {
+            Task.Factory.StartNew(() => Follow(DateTime));
         }
     }
-
-
 }
-
-
-
