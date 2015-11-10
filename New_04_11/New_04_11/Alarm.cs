@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace New_04_11
 {
+    [Serializable]
     public class Alarm
     {
         public Alarm(string name, DateTime dateTime)
@@ -12,11 +14,14 @@ namespace New_04_11
 
             IsActive = true;
         }
+        public Alarm()
+        {
+        }
 
-        public string Name { get; private set; }
-        public DateTime DateTime { get; private set; }
+        public string Name { get;  set; }
+        public DateTime DateTime { get;  set; }
 
-        public bool IsActive { get; private set; }
+        public bool IsActive { get;  set; }
 
 
         private void Follow(DateTime alarmTime)

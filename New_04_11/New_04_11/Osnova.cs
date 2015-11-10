@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace New_04_11
-{
+{[Serializable]
     internal class Osnova
     {
         private static readonly List<Alarm> Alarms = new List<Alarm>();
@@ -12,6 +14,7 @@ namespace New_04_11
         {
             LoadAlarms();
 
+           
             while (true)
             {
                 Console.WriteLine("БУДИЛЬНИК");
@@ -97,16 +100,27 @@ namespace New_04_11
                     Console.WriteLine("Неверный ввод, повторите попытку");
                 }
             }
+            Console.Read();
+         
+          
         }
 
         private static void LoadAlarms()
         {
+            using (FileStream fs = new FileStream("Alarm.xml", FileMode.OpenOrCreate))
+            {                
+                Alarm newAlarm = (Alarm)formater.Deserialize(fs);
+            }
 
         }
 
-        private static void SaveAlarms()
+       private static void SaveAlarms()
         {
-
+            XmlSerializer formater = new XmlSerializer(typeof(Alarm));
+            using (FileStream fs = new FileStream("Alarm.xml", FileMode.OpenOrCreate))
+            {
+                formater.Serialize(fs, Alarms);
+            }
         }
 
         private static bool IsAlarmWithNameExist(string alarmName)
