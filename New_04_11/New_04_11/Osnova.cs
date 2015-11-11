@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace New_04_11
-{[Serializable]
+{
     internal class Osnova
     {
-        private static readonly List<Alarm> Alarms = new List<Alarm>();
+        private const string FileName = "Alarms.xml";
+        private static List<Alarm> _alarms = new List<Alarm>();
 
         private static void Main()
         {
             LoadAlarms();
 
-           
             while (true)
             {
                 Console.WriteLine("БУДИЛЬНИК");
@@ -51,7 +51,7 @@ namespace New_04_11
                                 var newAlarm = new Alarm(newAlarmName, alarmTime);
                                 newAlarm.Run();
 
-                                Alarms.Add(newAlarm);
+                                _alarms.Add(newAlarm);
 
                                 Console.WriteLine("Будильник был успешно установлен на: " + alarmTime);
                                 break;
@@ -64,16 +64,16 @@ namespace New_04_11
                         {
                             Console.WriteLine("Введите время дзвонка или введите \"4\" для выхода в главное меню");
 
-                            var input = Console.ReadLine();
+                            string input = Console.ReadLine();
                             if (input == "4")
                             {
                                 break;
                             }
 
-                            var alarmForDelete = Alarms.FirstOrDefault(a => a.Name == input);
+                            Alarm alarmForDelete = _alarms.FirstOrDefault(a => a.Name == input);
                             if (alarmForDelete != null)
                             {
-                                Alarms.Remove(alarmForDelete);
+                                _alarms.Remove(alarmForDelete);
 
                                 Console.WriteLine("удалено");
                                 break;
@@ -84,7 +84,7 @@ namespace New_04_11
                     }
                     if (actionNumber == 3)
                     {
-                        foreach (var alarm in Alarms)
+                        foreach (Alarm alarm in _alarms)
                         {
                             Console.WriteLine("{0} - {1} - {2}", alarm.Name, alarm.DateTime, alarm.IsActive);
                         }
@@ -100,34 +100,41 @@ namespace New_04_11
                     Console.WriteLine("Неверный ввод, повторите попытку");
                 }
             }
-            Console.Read();
-         
-          
         }
 
         private static void LoadAlarms()
         {
-            using (FileStream fs = new FileStream("Alarm.xml", FileMode.OpenOrCreate))
-            {                
-                Alarm newAlarm = (Alarm)formater.Deserialize(fs);
-            }
+            try
+            {
+                var xmlSerializer = new XmlSerializer(typeof (List<Alarm>));
 
+                if (!File.Exists(FileName)) return;
+
+                using (var fs = new FileStream(FileName, FileMode.Open))
+                {
+                    _alarms = xmlSerializer.Deserialize(fs) as List<Alarm>;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Can't deserialize {0}", FileName);
+            }
         }
 
-       private static void SaveAlarms()
+        private static void SaveAlarms()
         {
-            XmlSerializer formater = new XmlSerializer(typeof(Alarm));
-            using (FileStream fs = new FileStream("Alarm.xml", FileMode.OpenOrCreate))
+            var xmlSerializer = new XmlSerializer(typeof (List<Alarm>));
+            using (var fs = new FileStream(FileName, FileMode.OpenOrCreate))
             {
-                formater.Serialize(fs, Alarms);
+                xmlSerializer.Serialize(fs, _alarms);
             }
         }
 
         private static bool IsAlarmWithNameExist(string alarmName)
         {
-            var result = false;
+            bool result = false;
 
-            foreach (var alarm in Alarms)
+            foreach (Alarm alarm in _alarms)
             {
                 if (alarm.Name == alarmName && alarm.IsActive)
                 {

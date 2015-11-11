@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ArrayOfAlarm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Alarm>
+    <Name>Alarms1</Name>
+    <DateTime>2015-11-11T12:24:00</DateTime>
+    <IsActive>true</IsActive>
+  </Alarm>
+</ArrayOfAlarm>m>

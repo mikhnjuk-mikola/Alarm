@@ -10,3 +10,15 @@ E:\Alarm\New_04_11\New_04_11\obj\Debug\New_04_11.pdb
 E:\Alarm\New_04_11\New_04_11\bin\Debug\New_04_11.exe
 E:\Alarm\New_04_11\New_04_11\bin\Debug\New_04_11.pdb
 E:\Alarm\New_04_11\New_04_11\obj\Debug\New_04_11.csprojResolveAssemblyReference.cache
+C:\Users\korolyuk\AppData\Roaming\Skype\My Skype Received Files\New_04_11\New_04_11\bin\Debug\New_04_11.exe.config
+C:\Users\korolyuk\AppData\Roaming\Skype\My Skype Received Files\New_04_11\New_04_11\obj\Debug\New_04_11.exe
+C:\Users\korolyuk\AppData\Roaming\Skype\My Skype Received Files\New_04_11\New_04_11\bin\Debug\New_04_11.exe
+C:\Users\korolyuk\AppData\Roaming\Skype\My Skype Received Files\New_04_11\New_04_11\bin\Debug\New_04_11.pdb
+C:\Users\korolyuk\AppData\Roaming\Skype\My Skype Received Files\New_04_11\New_04_11\obj\Debug\New_04_11.csprojResolveAssemblyReference.cache
+C:\Users\korolyuk\AppData\Roaming\Skype\My Skype Received Files\New_04_11\New_04_11\obj\Debug\New_04_11.pdb
+C:\Users\МИкола\AppData\Roaming\Skype\My Skype Received Files\New_04_11_FIXED\New_04_11\New_04_11\bin\Debug\New_04_11.exe.config
+C:\Users\МИкола\AppData\Roaming\Skype\My Skype Received Files\New_04_11_FIXED\New_04_11\New_04_11\obj\Debug\New_04_11.exe
+C:\Users\МИкола\AppData\Roaming\Skype\My Skype Received Files\New_04_11_FIXED\New_04_11\New_04_11\obj\Debug\New_04_11.pdb
+C:\Users\МИкола\AppData\Roaming\Skype\My Skype Received Files\New_04_11_FIXED\New_04_11\New_04_11\bin\Debug\New_04_11.exe
+C:\Users\МИкола\AppData\Roaming\Skype\My Skype Received Files\New_04_11_FIXED\New_04_11\New_04_11\bin\Debug\New_04_11.pdb
+C:\Users\МИкола\AppData\Roaming\Skype\My Skype Received Files\New_04_11_FIXED\New_04_11\New_04_11\obj\Debug\New_04_11.csprojResolveAssemblyReference.cache
